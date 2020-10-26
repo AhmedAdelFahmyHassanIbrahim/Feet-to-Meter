@@ -1,5 +1,4 @@
 from tkinter import Tk, Button, Label, DoubleVar, Entry
-from functions import convert, clear
 
 window = Tk()
 window.title("Feet to Meter Conversion App")
@@ -8,6 +7,19 @@ window.geometry("320x220")
 window.resizable(width = False, height = False)
 
 
+def convert():
+    """
+    docstring
+    """
+    value = float(feet_entry.get())
+    meter = value * 0.3048
+    meter_value.set("%.4f" %meter)
+
+def clear():
+    feet_value.set("")
+    meter_value.set("")
+
+    
 
 feet_label = Label(window, text="Feet", bg = "purple", fg="white", width = 14)
 feet_label.grid(column= 0 , row=-0, padx = 15, pady = 15)
